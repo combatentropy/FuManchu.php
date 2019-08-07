@@ -119,10 +119,10 @@ class FuManchu
         return $tpl;
     }
 
-    private function run(array $_DATA, string $_TEMPLATE)
+    private function run(array $_FU_MANCHU_DATA, string $_FU_MANCHU_TEMPLATE)
     {
-        extract($_DATA);
-        eval('?>' . $_TEMPLATE);
+        extract($_FU_MANCHU_DATA);
+        eval('?>' . $_FU_MANCHU_TEMPLATE);
     }
 
     public function render($arg1 = null, $arg2 = null)
