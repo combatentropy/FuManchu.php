@@ -3,6 +3,7 @@
 class FuManchu
 {
     private $dir;
+    private $esc;
 
     public function __construct(array $options = null)
     {
