@@ -3,7 +3,7 @@ The worst things about Mustache combined with PHP.
 
 Phu Manchu is a template language for PHP.
 It's meant to be fast and lightweight.
-Right now it is less than 100 lines.
+Right now it is less than 200 lines.
 
 Like Mustache it is meant to keep templates simple,
 but unlike Mustache it does not deny that it has some logic.
@@ -59,7 +59,7 @@ Let's say it's in a file called **hi.html**. Here is all you have to do.
 ```php
 <?
 
-require 'ph_m.php';
+$fm = new FuManchu;
 
 $data = [
     'name' => 'Arthur',
@@ -83,10 +83,16 @@ $data = [
 
 $template = 'hi.html';
 
-ph_m($data, $template);
+$fm->render($data, $template);
 ```
 
 `$template` can be a string or file name. Don't worry, it will figure it out.
+
+The order of the arguments doesn't matter.
+You can pass the data first or the template first.
+
+`$data` can be omitted.
+In that case, your global variables will be the data.
 
 Phu Manchu is deliberately limited to keep templates from changing data.
 Yes, it goes beyond even that, to keep it simple, lightweight, and clear.
